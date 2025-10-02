@@ -1,0 +1,20 @@
+# Halshow settings
+# This file is generated automatically.
+wm geometry . 1122x666+51+348
+placeFrames 0.3
+set ::ratio 0.3
+set ::old_w_leftf 333
+set ::watchlist {
+    sig+plasmac:arc-voltage-in
+    sig+plasmac:arc_voltage_out
+    pin+hm2_7i96.0.encoder.00.velocity
+    pin+db_arc-ok.delay
+    pin+plasmac.arc-lost-delay
+}
+set ::workmode watchhal
+set ::watchInterval 100
+set ::col1_width 100
+set ::ffmts 
+set ::ifmts 
+set ::alwaysOnTop 0
+set ::autoSaveWatchlist 1

@@ -1,0 +1,6 @@
+# Include your custom HAL commands here
+# This file will not be overwritten when you run PNCconf again
+
+# ---OHMIC SENSE CONTACT DEBOUNCE---
+setp plasmac.ohmic-sense-off-delay  3
+setp plasmac.ohmic-sense-on-delay   3

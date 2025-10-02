@@ -1,0 +1,26 @@
+--- QtVCP Screen Started on: Sun, Aug 10 2025 03:46:06 PM ---
+--- my_LinuxCNC_machine - QtPlasmaC v2.9-238.315, powered by QtVCP and LinuxCNC ---
+Sun10 15:46: Tool 0: No Tool
+Sun10 15:46: Unexpected realtime delay on task 0 with period 1000000
+This Message will only display once per session.
+Run the Latency Test and resolve before continuing.
+Sun10 15:46: GUI power on
+Sun10 15:46: Machine homed
+Sun10 15:46: Tool 0: torch
+Sun10 15:46: Cannot use axis values without a g code that uses them
+Sun10 15:46: Cannot use axis values without a g code that uses them
+Sun10 15:47: Loaded: /mnt/qnap/gcode/Bracket.ngc
+Sun10 15:48: Reloaded: /mnt/qnap/gcode/Bracket.ngc
+Sun10 15:48: Axis Limit Error:
+X move would exceed the minimum limit by 0.05in
+Sun10 15:50: Machine homed
+Sun10 15:50: Reloaded: /mnt/qnap/gcode/Bracket.ngc
+Sun10 15:50: Axis Limit Error:
+X move would exceed the minimum limit by 0.05in
+Sun10 15:51: Reloaded: /mnt/qnap/gcode/Bracket.ngc
+Sun10 15:52: Cycle started - Torch enabled
+Sun10 15:53: Cycle paused
+Sun10 15:53: float switch activated
+program is paused.
+Sun10 15:53: Cycle resumed
+Sun10 15:53: Machine idle

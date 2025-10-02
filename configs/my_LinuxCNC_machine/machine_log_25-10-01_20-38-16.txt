@@ -1,0 +1,12 @@
+--- QtVCP Screen Started on: Wed, Oct 01 2025 08:37:09 PM ---
+--- my_LinuxCNC_machine - QtPlasmaC v2.9-238.315, powered by QtVCP and LinuxCNC ---
+Wed01 20:37: Tool 0: No Tool
+Wed01 20:37: GUI power on
+Wed01 20:37: Float Switch has aborted active jogging
+Wed01 20:37: Float Switch has disabled jogging
+Wed01 20:37: GUI power off
+Wed01 20:37: joint 2 on limit switch error
+Wed01 20:37: Hard Limits Are Overridden!
+Wed01 20:37: GUI power on
+Wed01 20:38: Machine homed
+Wed01 20:38: Tool 0: torch
