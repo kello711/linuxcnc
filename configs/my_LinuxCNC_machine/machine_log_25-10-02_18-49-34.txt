@@ -1,0 +1,45 @@
+--- QtVCP Screen Started on: Thu, Oct 02 2025 05:17:10 PM ---
+--- my_LinuxCNC_machine - QtPlasmaC v2.9-238.315, powered by QtVCP and LinuxCNC ---
+Thu02 17:17: Tool 0: No Tool
+Thu02 17:17: GUI power on
+Thu02 17:17: Machine homed
+Thu02 17:17: Tool 0: torch
+Thu02 17:18: File Error:
+/mnt/qnap/gcode/Bracket.ngc does not exist
+Thu02 17:18: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:19: Save Error: Multiple '.' not allowed in Linuxcnc
+Thu02 17:19: Save Error: Multiple '.' not allowed in Linuxcnc
+Thu02 17:20: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:20: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:21: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:23: Float Switch has aborted active jogging
+Thu02 17:23: Float Switch has disabled jogging
+Thu02 17:23: Float Switch has disabled jogging
+Thu02 17:23: Float Switch has disabled jogging
+Thu02 17:25: Probe test started
+Thu02 17:25: Probe test completed
+Thu02 17:25: Cycle started - Torch disabled
+Thu02 17:25: Cycle aborted
+Thu02 17:25: Machine idle
+Thu02 17:25: Float Switch has disabled jogging
+Thu02 17:25: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:26: Cycle started - Torch disabled
+Thu02 17:26: Machine idle
+Thu02 17:28: Cycle started - Torch enabled
+Thu02 17:28: Machine idle
+Thu02 17:43: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:44: Cycle started - Torch enabled
+Thu02 17:45: Machine idle
+Thu02 17:46: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:46: Cycle started - Torch enabled
+Thu02 17:47: Machine idle
+Thu02 17:47: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:47: Cycle started - Torch enabled
+Thu02 17:48: Machine idle
+Thu02 17:49: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:49: Cycle started - Torch enabled
+Thu02 17:50: Machine idle
+Thu02 17:50: Reloaded: /home/cnc/linuxcnc/nc_files/CasterPlate.ngc
+Thu02 17:50: Cycle started - Torch enabled
+Thu02 17:51: Machine idle
+Thu02 18:28: hm2/hm2_7i96.0: error finishing read! iter=4253841

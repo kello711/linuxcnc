@@ -1,0 +1,7 @@
+--- QtVCP Screen Started on: Wed, Oct 01 2025 08:38:20 PM ---
+--- my_LinuxCNC_machine - QtPlasmaC v2.9-238.315, powered by QtVCP and LinuxCNC ---
+Wed01 20:38: Tool 0: No Tool
+Wed01 20:38: GUI power on
+Wed01 20:38: Machine homed
+Wed01 20:38: Tool 0: torch
+Wed01 20:38: GUI power off

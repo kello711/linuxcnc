@@ -19,8 +19,8 @@ MachineLogDialog_sound_type = READY
 last_loaded_directory = /mnt/qnap/gcode
 RecentPath_0 = /mnt/qnap/gcode/Bracket.ngc
 style_QSS_Path = DEFAULT
-last_saved_directory = /tmp/emcflt-vss6vftu.d
-RecentSavedPath_0 = /tmp/emcflt-vss6vftu.d/CasterPlate.ngc
+last_saved_directory = /mnt/qnap/gcode
+RecentSavedPath_0 = /mnt/qnap/gcode/qtplasmac_program_clear.ngc
 
 [SCREEN_OPTIONS]
 overlay_play_sound = False

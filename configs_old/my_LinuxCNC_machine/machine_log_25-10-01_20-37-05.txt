@@ -1,0 +1,20 @@
+--- QtVCP Screen Started on: Wed, Oct 01 2025 08:22:21 PM ---
+--- my_LinuxCNC_machine - QtPlasmaC v2.9-238.315, powered by QtVCP and LinuxCNC ---
+Wed01 20:22: Tool 0: No Tool
+Wed01 20:23: GUI power on
+Wed01 20:23: Machine homed
+Wed01 20:23: Tool 0: torch
+Wed01 20:24: Machine homed
+Wed01 20:25: Cannot use axis values without a g code that uses them
+Wed01 20:26: Torch pulse started
+Wed01 20:26: Torch pulse completed
+Wed01 20:27: Probe test started
+Wed01 20:27: Probe test completed
+Wed01 20:27: Float Switch has aborted active jogging
+Wed01 20:27: Float Switch has disabled jogging
+Wed01 20:28: Float Switch has disabled jogging
+Wed01 20:28: Float Switch has disabled jogging
+Wed01 20:32: Virtual Keyboard Error:
+"onboard" virtual keyboard is not installed
+some keyboard functions are not available
+Wed01 20:34: Float Switch has aborted active jogging
