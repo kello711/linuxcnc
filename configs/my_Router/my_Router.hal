@@ -6,7 +6,7 @@
 loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
 loadrt hostmot2
-loadrt hm2_eth board_ip="192.168.1.121" config="num_encoders=1 num_pwmgens=1 num_stepgens=4" 
+loadrt hm2_eth board_ip="192.168.1.121" config="num_encoders=1 num_pwmgens=1 num_stepgens=4"
 setp    hm2_7i96s.0.pwmgen.pwm_frequency 20000
 setp    hm2_7i96s.0.pwmgen.pdm_frequency 6000000
 setp    hm2_7i96s.0.watchdog.timeout_ns 5000000
@@ -361,8 +361,8 @@ net machine-is-enabled        <=  motion.motion-enabled
 
 #  ---estop signals---
 
-net estop-out     <=  iocontrol.0.user-enable-out
-net estop-out     =>  iocontrol.0.emc-enable-in
+#net estop-out     <=  iocontrol.0.user-enable-out
+#net estop-out     =>  iocontrol.0.emc-enable-in
 
 #  ---manual tool change signals---
 
@@ -379,4 +379,3 @@ net tool-number            =>  hal_manualtoolchange.number
 
 #  ---ignore tool prepare requests---
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
-
