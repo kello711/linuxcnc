@@ -9,8 +9,9 @@ set ::watchlist {
     pin+hm2_7i96s.0.gpio.001.in_not
     pin+hm2_7i96s.0.gpio.003.in_not
     pin+hm2_7i96s.0.gpio.002.in_not
+    pin+hm2_7i96s.0.gpio.010.in_not
 }
-set ::workmode watchhal
+set ::workmode showhal
 set ::watchInterval 100
 set ::col1_width 100
 set ::ffmts 
