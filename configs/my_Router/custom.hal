@@ -2,16 +2,27 @@
 # This file will not be overwritten when you run PNCconf again
 
 loadrt estop_latch
+
 addf estop-latch.0 servo-thread
-
-# net external-estop <= hm2_7i96s.0.inm.00.input-10-not
-
 
 # --- ESTOP CHAIN STARTS ---
 
-net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out
-net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in
-net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
-net remote-estop estop-latch.0.fault-in <=  hm2_7i96s.0.inm.00.input-10-not
+# net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out
+# net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in
+# net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
+# net remote-estop estop-latch.0.fault-in <=  hm2_7i96s.0.inm.00.input-10-not
 
 # --- ESTOP CHAIN ENDS ---
+
+# -- RS-485 Spindle Control --
+loadusr -Wn vfd hy_vfd -n vfd -d /dev/ttyUSB0 -p none -r 19200
+                                
+net spindle-vel-cmd-rpm-abs   	vfd.speed-command
+net spindle-enable             	vfd.spindle-on
+net spindle-cw 					vfd.spindle-forward
+net spindle-ccw 				vfd.spindle-reverse
+net spindle-at-speed 			vfd.spindle-at-speed
+                                
+setp vfd.enable 1
+
+# -- RS-485 END --

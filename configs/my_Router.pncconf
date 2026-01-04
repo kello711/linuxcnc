@@ -300,8 +300,8 @@
   <property type="eval" name="mesa0_currentfirmwaredata" value="['7i96s-Internal Data', '7i96s', '7i96s_d', '7i96s', 'hm2_eth', 1, 3, 0, 0, 1, 3, 0, 0, 5, 2, 1, 1, [], 0, 0, 0, 0, 0, 0, 0, 1, 34, 33, 200, [1, 2, 3], ['INM Input', 100], ['INM Input', 101], ['INM Input', 102], ['INM Input', 103], ['INM Input', 104], ['INM Input', 105], ['INM Input', 106], ['INM Input', 107], ['INM Input', 108], ['INM Input', 109], ['INM Input', 110], ['SSR Output', 100], ['SSR Output', 101], ['SSR Output', 102], ['SSR Output', 103], ['OUTM Output', 104], ['OUTM Output', 105], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Step Gen-A', 0], ['Dir Gen-B', 0], ['Step Gen-A', 1], ['Dir Gen-B', 1], ['Step Gen-A', 2], ['Dir Gen-B', 2], ['Step Gen-A', 3], ['Dir Gen-B', 3], ['Step Gen-A', 4], ['Dir Gen-B', 4], ['Quad Enc-A', 0], ['Quad Enc-B', 0], ['Quad Enc-I', 0], ['SSERIAL-P0-RX', 0], ['SSERIAL-P0-TX', 0], ['SSERIAL-P0-EN', 0], ['PWM Gen-P', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['GPIO Input', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0], ['Not Used', 0]]"/>
   <property type="string" name="mesa0_firmware" value="7i96s_d"/>
   <property type="int" name="mesa0_isawatchdog" value="1"/>
-  <property type="int" name="mesa0_numof_encodergens" value="1"/>
-  <property type="int" name="mesa0_numof_pwmgens" value="1"/>
+  <property type="int" name="mesa0_numof_encodergens" value="0"/>
+  <property type="int" name="mesa0_numof_pwmgens" value="0"/>
   <property type="int" name="mesa0_numof_resolvers" value="0"/>
   <property type="int" name="mesa0_numof_sserialchannels" value="1"/>
   <property type="int" name="mesa0_numof_sserialports" value="0"/>
@@ -318,7 +318,7 @@
   <property type="string" name="mesa0c1pin10" value="estop-ext"/>
   <property type="bool" name="mesa0c1pin10inv" value="True"/>
   <property type="string" name="mesa0c1pin10type" value="INM Input"/>
-  <property type="string" name="mesa0c1pin11" value="unused-output"/>
+  <property type="string" name="mesa0c1pin11" value="machine-is-enabled"/>
   <property type="bool" name="mesa0c1pin11inv" value="False"/>
   <property type="string" name="mesa0c1pin11type" value="SSR Output"/>
   <property type="string" name="mesa0c1pin12" value="unused-output"/>
@@ -330,10 +330,10 @@
   <property type="string" name="mesa0c1pin14" value="unused-output"/>
   <property type="bool" name="mesa0c1pin14inv" value="False"/>
   <property type="string" name="mesa0c1pin14type" value="SSR Output"/>
-  <property type="string" name="mesa0c1pin15" value="spindle-ccw"/>
+  <property type="string" name="mesa0c1pin15" value="unused-output"/>
   <property type="bool" name="mesa0c1pin15inv" value="False"/>
   <property type="string" name="mesa0c1pin15type" value="OUTM Output"/>
-  <property type="string" name="mesa0c1pin16" value="spindle-cw"/>
+  <property type="string" name="mesa0c1pin16" value="unused-output"/>
   <property type="bool" name="mesa0c1pin16inv" value="False"/>
   <property type="string" name="mesa0c1pin16type" value="OUTM Output"/>
   <property type="string" name="mesa0c1pin17" value="unused-unused"/>
@@ -371,7 +371,7 @@
   <property type="string" name="mesa0c1pin5" value="unused-input"/>
   <property type="bool" name="mesa0c1pin5inv" value="False"/>
   <property type="string" name="mesa0c1pin5type" value="INM Input"/>
-  <property type="string" name="mesa0c1pin6" value="unused-input"/>
+  <property type="string" name="mesa0c1pin6" value="abort"/>
   <property type="bool" name="mesa0c1pin6inv" value="False"/>
   <property type="string" name="mesa0c1pin6type" value="INM Input"/>
   <property type="string" name="mesa0c1pin7" value="unused-input"/>
@@ -387,15 +387,15 @@
   <property type="bool" name="mesa0c2pin0inv" value="False"/>
   <property type="string" name="mesa0c2pin0type" value="Step Gen-A"/>
   <property type="string" name="mesa0c2pin1" value="x-stepgen-dir"/>
-  <property type="string" name="mesa0c2pin10" value="unused-encoder"/>
+  <property type="string" name="mesa0c2pin10" value="unused-input"/>
   <property type="bool" name="mesa0c2pin10inv" value="False"/>
-  <property type="string" name="mesa0c2pin10type" value="Quad Enc-A"/>
-  <property type="string" name="mesa0c2pin11" value="unused-encoder"/>
+  <property type="string" name="mesa0c2pin10type" value="GPIO Input"/>
+  <property type="string" name="mesa0c2pin11" value="unused-input"/>
   <property type="bool" name="mesa0c2pin11inv" value="False"/>
-  <property type="string" name="mesa0c2pin11type" value="Quad Enc-B"/>
-  <property type="string" name="mesa0c2pin12" value="unused-encoder"/>
+  <property type="string" name="mesa0c2pin11type" value="GPIO Input"/>
+  <property type="string" name="mesa0c2pin12" value="unused-input"/>
   <property type="bool" name="mesa0c2pin12inv" value="False"/>
-  <property type="string" name="mesa0c2pin12type" value="Quad Enc-I"/>
+  <property type="string" name="mesa0c2pin12type" value="GPIO Input"/>
   <property type="string" name="mesa0c2pin13" value="unused-input"/>
   <property type="bool" name="mesa0c2pin13inv" value="False"/>
   <property type="string" name="mesa0c2pin13type" value="GPIO Input"/>
@@ -405,9 +405,9 @@
   <property type="string" name="mesa0c2pin15" value="unused-input"/>
   <property type="bool" name="mesa0c2pin15inv" value="False"/>
   <property type="string" name="mesa0c2pin15type" value="GPIO Input"/>
-  <property type="string" name="mesa0c2pin16" value="s-pwm-pulse"/>
+  <property type="string" name="mesa0c2pin16" value="unused-input"/>
   <property type="bool" name="mesa0c2pin16inv" value="False"/>
-  <property type="string" name="mesa0c2pin16type" value="PWM Gen-P"/>
+  <property type="string" name="mesa0c2pin16type" value="GPIO Input"/>
   <property type="string" name="mesa0c2pin17" value="unused-unused"/>
   <property type="bool" name="mesa0c2pin17inv" value="False"/>
   <property type="string" name="mesa0c2pin17type" value="Not Used"/>
