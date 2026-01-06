@@ -1,6 +1,6 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 1393x1205+156+27
+wm geometry . 1393x1205+0+27
 placeFrames 0.3
 set ::ratio 0.3
 set ::old_w_leftf 160
@@ -15,6 +15,9 @@ set ::watchlist {
     pin+hm2_7i96s.0.ssr.00.out-00
     pin+hm2_7i96s.0.inm.00.input-10
     pin+hm2_7i96s.0.inm.00.input-10-not
+    pin+hm2_7i96s.0.inm.00.input-06
+    pin+halui.estop.activate
+    pin+halui.machine.on
 }
 set ::workmode watchhal
 set ::watchInterval 100

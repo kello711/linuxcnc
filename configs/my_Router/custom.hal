@@ -3,6 +3,7 @@
 
 loadrt estop_latch
 
+
 addf estop-latch.0 servo-thread
 
 # --- ESTOP CHAIN STARTS ---
@@ -26,3 +27,15 @@ net spindle-at-speed 			vfd.spindle-at-speed
 setp vfd.enable 1
 
 # -- RS-485 END --
+
+# --- X drive ALM ---
+net x-fault => joint.0.amp-fault-in <= hm2_7i96s.0.inm.00.input-06
+
+# --- Y drive ALM ---
+#net y-fault => axis.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-08
+
+# --- Y2 drive ALM ---
+#net y-fault => axis.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-09
+
+# --- Z drive ALM ---
+#net z-fault => axis.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-10
