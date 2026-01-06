@@ -10,10 +10,10 @@ setp oneshot.0.width 0.5
 
 # --- ESTOP CHAIN STARTS ---
 
-# net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out
-# net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in
-# net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
-# net remote-estop estop-latch.0.fault-in <=  hm2_7i96s.0.inm.00.input-10-not
+net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out
+net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in
+net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
+net remote-estop estop-latch.0.fault-in <=  hm2_7i96s.0.inm.00.input-10-not
 
 # --- ESTOP CHAIN ENDS ---
 
@@ -27,6 +27,7 @@ net spindle-ccw 				vfd.spindle-reverse
 net spindle-at-speed 			vfd.spindle-at-speed
                                 
 setp vfd.enable 1
+#net machine-is-enabled => vfd.enable
 
 # -- RS-485 END --
 

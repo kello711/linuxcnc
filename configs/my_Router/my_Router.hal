@@ -48,7 +48,7 @@ net max-home-z     <=  hm2_7i96s.0.inm.00.input-02-not
 net home-y2     <=  hm2_7i96s.0.inm.00.input-03-not
 
 # --- ESTOP-EXT ---
-net estop-ext     <=  hm2_7i96s.0.inm.00.input-10
+#net estop-ext     <=  hm2_7i96s.0.inm.00.input-10
 
 #*******************
 #  AXIS X JOINT 0
@@ -352,8 +352,8 @@ net machine-is-enabled        <=  motion.motion-enabled
 
 #  ---estop signals---
 
-net estop-out     <=  iocontrol.0.user-enable-out
-net estop-ext     =>  iocontrol.0.emc-enable-in
+#net estop-out     <=  iocontrol.0.user-enable-out
+#net estop-ext     =>  iocontrol.0.emc-enable-in
 
 #  ---manual tool change signals---
 
