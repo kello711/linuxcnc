@@ -27,7 +27,6 @@ net spindle-ccw 				vfd.spindle-reverse
 net spindle-at-speed 			vfd.spindle-at-speed
                                 
 setp vfd.enable 1
-#net machine-is-enabled => vfd.enable
 
 # -- RS-485 END --
 
