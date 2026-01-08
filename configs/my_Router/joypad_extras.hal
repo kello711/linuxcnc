@@ -14,8 +14,8 @@ addf and2_extras1 servo-thread
 #
 net jog-x-pos <= input.0.abs-hat0x-is-pos => halui.axis.x.plus  halui.joint.0.plus 		# Dpad right
 net jog-x-neg <= input.0.abs-hat0x-is-neg => halui.axis.x.minus halui.joint.0.minus 	# Dpad left
-net jog-y-pos <= input.0.abs-hat0y-is-pos => halui.axis.y.plus  halui.joint.1.plus		# Dpad down
-net jog-y-neg <= input.0.abs-hat0y-is-neg => halui.axis.y.minus halui.joint.1.minus		# Dpad up
+net jog-y-pos <= input.0.abs-hat0y-is-neg => halui.axis.y.plus  halui.joint.1.plus		# Dpad up
+net jog-y-neg <= input.0.abs-hat0y-is-pos => halui.axis.y.minus halui.joint.1.minus		# Dpad down
 
 # Following four lines uses the lathe keyboard convention or right/left being Z and up/down being X.
 #net jog-x-pos <= input.0.abs-hat0y-is-pos => halui.axis.x.plus  halui.joint.0.plus		# 
