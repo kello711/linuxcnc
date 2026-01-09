@@ -1,4 +1,4 @@
 source pyvcp_options.hal
-source joypad_jog_speed.hal
-source joypad_xyz.hal
-source joypad_extras.hal
+#source joypad_jog_speed.hal
+#source joypad_xyz.hal
+#source joypad_extras.hal

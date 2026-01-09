@@ -1,5 +1,5 @@
 #
-# Joypad_jog_speed.hal 
+# Joypad_jog_speed.hal
 #
 # This file is an example .hal for control of the halui jog speed using a hal_input device.
 # This was tested with a Logitech F310.
@@ -8,7 +8,8 @@
 # Add this file to postgui_call_list.hal using a line with "source Joypad_jog_speed.hal".
 # Add another file (joypad_xyz.hal or joypad_xy.hal) to link the joysticks values to achieve motion.
 #
-loadusr -W hal_input -KRAL Dual
+
+#loadusr -W hal_input -KRAL Dual
 
 #
 # Using Joypad buttons to set the speeds
@@ -38,8 +39,6 @@ net slow   <= joy_or2_sel0.in0 => input.0.btn-trigger
 net medium <= joy_or2_sel1.in0 => input.0.btn-thumb
 net fast   <= joy_or2_sel0.in1 joy_or2_sel1.in1 => input.0.btn-thumb2
 
-net joy-speed-sel0 <= joy_or2_sel0.out  => joy_mux4.sel0 
-net joy-speed-sel1 <= joy_or2_sel1.out  => joy_mux4.sel1 
+net joy-speed-sel0 <= joy_or2_sel0.out  => joy_mux4.sel0
+net joy-speed-sel1 <= joy_or2_sel1.out  => joy_mux4.sel1
 net jog-speed      <= joy_mux4.out => halui.axis.jog-speed halui.joint.jog-speed
-
-
