@@ -9,7 +9,7 @@
 # Add another file (joypad_xyz.hal or joypad_xy.hal) to link the joysticks values to achieve motion.
 #
 
-#loadusr -W hal_input -KRAL Dual
+# loadusr -W hal_input -KRAL Dual
 
 #
 # Using Joypad buttons to set the speeds
