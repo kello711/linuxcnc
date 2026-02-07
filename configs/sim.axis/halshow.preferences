@@ -1,0 +1,21 @@
+# Halshow settings
+# This file is generated automatically.
+wm geometry . 1426x1001+263+238
+placeFrames 0.3
+set ::ratio 0.3
+set ::old_w_leftf 160
+set ::watchlist {
+    sig+pdnt.axis.X.select
+    pin+whb.halui.machine.is-on
+    pin+whb.halui.machine.on
+    pin+whb.axis.x.jog-counts
+    pin+halui.machine.is-on
+    sig+pdnt.machine.on
+}
+set ::workmode watchhal
+set ::watchInterval 100
+set ::col1_width 100
+set ::ffmts 
+set ::ifmts 
+set ::alwaysOnTop 0
+set ::autoSaveWatchlist 1
