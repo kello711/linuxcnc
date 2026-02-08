@@ -39,7 +39,6 @@ net drive-alarm-in oneshot.0.in <= hm2_7i96s.0.inm.00.input-06
 # Connect the oneshot output to a LinuxCNC internal signal to trigger an alarm/e-stop
 net oneshot-alarm-out oneshot.0.out => joint.0.amp-fault-in
 
-
 # --- Y drive ALM ---
 #net y-fault => axis.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-08
 

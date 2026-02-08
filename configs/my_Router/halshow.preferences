@@ -1,32 +1,12 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 1227x750+35+323
+wm geometry . 1227x750+69+178
 placeFrames 0.3
 set ::ratio 0.3
 set ::old_w_leftf 160
 set ::watchlist {
-    pin+hm2_7i96s.0.gpio.000.in_not
-    pin+hm2_7i96s.0.gpio.001.in_not
-    pin+hm2_7i96s.0.gpio.003.in_not
-    pin+hm2_7i96s.0.gpio.002.in_not
-    pin+hm2_7i96s.0.gpio.010.in_not
     sig+machine-is-enabled
-    pin+hm2_7i96s.0.ssr.00.out-00
-    pin+hm2_7i96s.0.inm.00.input-06
-    pin+halui.estop.activate
     pin+halui.machine.on
-    sig+estop-loopin
-    sig+estop-loopout
-    sig+estop-reset
-    sig+remote-estop
-    pin+estop-latch.0.fault-in
-    pin+estop-latch.0.fault-out
-    pin+estop-latch.0.ok-in
-    pin+estop-latch.0.ok-out
-    pin+estop-latch.0.reset
-    pin+halui.estop.is-activated
-    pin+halui.estop.reset
-    pin+iocontrol.0.emc-enable-in
 }
 set ::workmode watchhal
 set ::watchInterval 100
