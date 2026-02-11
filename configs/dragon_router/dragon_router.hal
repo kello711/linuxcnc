@@ -7,60 +7,52 @@ loadusr -Wn pyvcp pyvcp -c pyvcp [DISPLAY](PYVCP)
 loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
 loadrt hostmot2
-loadrt hm2_eth board_ip="192.168.1.121" config="num_encoders=1 num_pwmgens=1 num_stepgens=4" 
-setp    hm2_7i96s.0.pwmgen.pwm_frequency 20000
-setp    hm2_7i96s.0.pwmgen.pdm_frequency 6000000
+loadrt hm2_eth board_ip="192.168.1.121" config="num_encoders=1 num_stepgens=4"
 setp    hm2_7i96s.0.watchdog.timeout_ns 5000000
 loadrt pid names=pid.x,pid.y,pid.y2,pid.z,pid.s
 loadrt abs names=abs.spindle
 loadrt lowpass names=lowpass.spindle
 loadrt mux16 names=jogincr
 
-addf hm2_7i96s.0.read          servo-thread
+addf hm2_7i96s.0.read         servo-thread
 addf motion-command-handler   servo-thread
 addf motion-controller        servo-thread
 addf pid.x.do-pid-calcs       servo-thread
 addf pid.y.do-pid-calcs       servo-thread
-addf pid.y2.do-pid-calcs       servo-thread
+addf pid.y2.do-pid-calcs      servo-thread
 addf pid.z.do-pid-calcs       servo-thread
 addf pid.s.do-pid-calcs       servo-thread
 addf jogincr                  servo-thread
 addf abs.spindle              servo-thread
 addf lowpass.spindle          servo-thread
-addf hm2_7i96s.0.write         servo-thread
+addf hm2_7i96s.0.write        servo-thread
 setp hm2_7i96s.0.dpll.01.timer-us -50
 setp hm2_7i96s.0.stepgen.timer-number 1
 
 # external output signals
 
 # --- MACHINE-IS-ENABLED ---
-net machine-is-enabled  =>     hm2_7i96s.0.ssr.00.out-00
+net machine-is-enabled  => hm2_7i96s.0.ssr.00.out-00
 
 # external input signals
 
 # --- MAX-HOME-X ---
-net max-home-x     <=  hm2_7i96s.0.inm.00.input-00-not
+net max-home-x  <=  hm2_7i96s.0.inm.00.input-00-not
 
 # --- MAX-HOME-Y ---
-net max-home-y     <=  hm2_7i96s.0.inm.00.input-01-not
+net max-home-y  <=  hm2_7i96s.0.inm.00.input-01-not
 
 # --- MAX-HOME-Z ---
-net max-home-z     <=  hm2_7i96s.0.inm.00.input-02-not
+net max-home-z  <=  hm2_7i96s.0.inm.00.input-02-not
 
 # --- MAX-HOME-Y2 ---
-net max-home-y2     <=  hm2_7i96s.0.inm.00.input-03-not
-
-# --- ABORT ---
-net abort     <=  hm2_7i96s.0.inm.00.input-04
+net max-home-y2 <=  hm2_7i96s.0.inm.00.input-03-not
 
 # --- PROBE-IN ---
 net probe-in     <=  hm2_7i96s.0.inm.00.input-05
 
-# --- MIN-Z ---
-net min-z     <=  hm2_7i96s.0.inm.00.input-08-not
-
 # --- ESTOP-EXT ---
-net estop-ext     <=  hm2_7i96s.0.inm.00.input-10
+#net estop-ext     <=  hm2_7i96s.0.inm.00.input-10
 
 #*******************
 #  AXIS X JOINT 0
@@ -271,7 +263,6 @@ net z-enable     => hm2_7i96s.0.stepgen.03.enable
 # ---setup home / limit switch signals---
 
 net max-home-z     =>  joint.3.home-sw-in
-net min-z     =>  joint.3.neg-lim-sw-in
 net max-home-z     =>  joint.3.pos-lim-sw-in
 
 #*******************
@@ -356,7 +347,7 @@ net coolant-flood     <=  iocontrol.0.coolant-flood
 
 net probe-in     =>  motion.probe-input
 
-# connect selectable mpg jog increments 
+# connect selectable mpg jog increments
 
 net jog-incr-a           =>  jogincr.sel0
 net jog-incr-b           =>  jogincr.sel1
@@ -403,4 +394,3 @@ net tool-number            <= iocontrol.0.tool-prep-number
 
 #  ---ignore tool prepare requests---
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
-
