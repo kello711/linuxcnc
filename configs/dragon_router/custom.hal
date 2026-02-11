@@ -35,7 +35,7 @@ setp vfd.enable 1
 
 # --- Drive ALM ---
 
-net drive-fault => joint.0.amp-fault-in <= hm2_7i96s.0.inm.00.input-06
+#net drive-fault => joint.0.amp-fault-in <= hm2_7i96s.0.inm.00.input-06
 
 # Connect a physical input pin (e.g., from a drive alarm loop) to the oneshot input
 net drive-alarm-in oneshot.0.in <= hm2_7i96s.0.inm.00.input-06

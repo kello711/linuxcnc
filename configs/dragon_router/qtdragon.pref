@@ -2,6 +2,8 @@
 AboutDialog-geometry = half
 LncMessage-geometry = 910 539 280 118
 ToolChangeDialog-geometry = default
+basicProbeHelpDialog-geometry = default
+CalculatorDialog-geometry = 910 539 472 376
 
 [DIALOG_OPTIONS]
 EntryDialog_play_sound = True
@@ -118,4 +120,22 @@ Camview xscale = 100
 Camview yscale = 100
 Camview cam number = 0
 Use tool touchplate = False
+
+[PROBE OPTIONS]
+Probe tool = 0
+Probe diameter = 4
+Probe rapid = 10
+Probe feed = 10
+Probe search = 10
+Probe max travel = 10
+Probe max z = 2
+Probe extra depth = 0
+Probe step off = 10
+Probe xy clearance = 10
+Probe z clearance = 10
+Probe edge width = 10
+Calibration offset = 0
+Cal x width = 0
+Cal y width = 0
+Cal diameter = 0
 
