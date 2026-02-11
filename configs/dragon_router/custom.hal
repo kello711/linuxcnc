@@ -1,0 +1,49 @@
+# Include your custom HAL commands here
+# This file will not be overwritten when you run PNCconf again
+
+loadrt estop_latch
+loadrt oneshot count=1
+
+addf estop-latch.0 servo-thread
+addf oneshot.0 servo-thread
+setp oneshot.0.width 0.5
+
+# --- ESTOP CHAIN STARTS ---
+
+net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out
+net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in
+net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
+net remote-estop estop-latch.0.fault-in <=  hm2_7i96s.0.inm.00.input-10-not
+
+# --- ESTOP CHAIN ENDS ---
+
+# -- RS-485 Spindle Control --
+loadusr -Wn vfd hy_vfd -n vfd -d /dev/ttyUSB0 -p none -r 19200
+                                
+net spindle-vel-cmd-rpm-abs   	vfd.speed-command
+net spindle-enable             	vfd.spindle-on
+net spindle-cw 					vfd.spindle-forward
+net spindle-ccw 				vfd.spindle-reverse
+net spindle-at-speed 			vfd.spindle-at-speed
+                                
+setp vfd.enable 1
+
+# -- RS-485 END --
+
+# --- Drive ALM ---
+#net drive-fault => joint.0.amp-fault-in <= hm2_7i96s.0.inm.00.input-06
+
+# Connect a physical input pin (e.g., from a drive alarm loop) to the oneshot input
+net drive-alarm-in oneshot.0.in <= hm2_7i96s.0.inm.00.input-06
+
+# Connect the oneshot output to a LinuxCNC internal signal to trigger an alarm/e-stop
+net oneshot-alarm-out oneshot.0.out => joint.0.amp-fault-in
+
+# --- Y drive ALM ---
+#net y-fault => axis.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-08
+
+# --- Y2 drive ALM ---
+#net y-fault => axis.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-09
+
+# --- Z drive ALM ---
+#net z-fault => axis.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-10
