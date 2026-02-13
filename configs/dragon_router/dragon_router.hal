@@ -13,6 +13,7 @@ loadrt pid names=pid.x,pid.y,pid.y2,pid.z,pid.s
 loadrt abs names=abs.spindle
 loadrt lowpass names=lowpass.spindle
 loadrt mux16 names=jogincr
+loadrt or2 names=or.probeortls
 
 addf hm2_7i96s.0.read         servo-thread
 addf motion-command-handler   servo-thread
@@ -47,9 +48,6 @@ net max-home-z  <=  hm2_7i96s.0.inm.00.input-02-not
 
 # --- MAX-HOME-Y2 ---
 net max-home-y2 <=  hm2_7i96s.0.inm.00.input-03-not
-
-# --- PROBE-IN ---
-net probe-in     <=  hm2_7i96s.0.inm.00.input-05
 
 # --- ESTOP-EXT ---
 #net estop-ext     <=  hm2_7i96s.0.inm.00.input-10
@@ -343,9 +341,23 @@ net abort                 halui.abort
 net coolant-mist      <=  iocontrol.0.coolant-mist
 net coolant-flood     <=  iocontrol.0.coolant-flood
 
-#  ---probe signal---
+# --- Probe / TLS ---
+addf or.probeortls servo-thread
 
-net probe-in     =>  motion.probe-input
+loadrt debounce cfg=1
+addf debounce.0 servo-thread
+setp debounce.0.delay 3
+
+# --- PROBE-IN ---
+net probe-in	<= hm2_7i96s.0.inm.00.input-05
+net probe-in or.probeortls.in0
+# --- TLS-Normal-IN ---
+net tls-in  <= hm2_7i96s.0.inm.00.input-07
+net tls-in 	or.probeortls.in1
+
+net debounceProbeTSin debounce.0.0.in  <=  or.probeortls.out
+net debounceProbeTSout debounce.0.0.out =>  motion.probe-input
+
 
 # connect selectable mpg jog increments
 
