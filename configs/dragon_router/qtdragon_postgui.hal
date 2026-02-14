@@ -1,7 +1,7 @@
 # Include your custom_postgui HAL commands here
 # This file will not be overwritten when you run PNCconf again
 
-net probe-in          qtdragon.led-probe
+net debounceProbeTSout		qtdragon.led-probe
 
 
 # --- Tool changes ---
