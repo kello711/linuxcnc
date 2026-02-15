@@ -4,7 +4,7 @@
 # overwritten when you run PNCconf again
 
 loadrt [KINS]KINEMATICS
-loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
+loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS num_dio=6 num_aio=3
 loadrt hostmot2
 loadrt hm2_eth board_ip="192.168.1.121" config="num_encoders=0 num_pwmgens=0 num_stepgens=4" 
 setp    hm2_7i96s.0.watchdog.timeout_ns 5000000
@@ -42,10 +42,10 @@ net max-home-z     <=  hm2_7i96s.0.inm.00.input-02-not
 net max-home-y2     <=  hm2_7i96s.0.inm.00.input-03-not
 
 # --- PROBE-IN ---
-net probe-in     <=  hm2_7i96s.0.inm.00.input-05
+#net probe-in     <=  hm2_7i96s.0.inm.00.input-05	# moved to custom.hal
 
 # --- ESTOP-EXT ---
-net estop-ext     <=  hm2_7i96s.0.inm.00.input-10-not
+#net estop-ext     <=  hm2_7i96s.0.inm.00.input-10-not	# moved to custom.hal
 
 #*******************
 #  AXIS X JOINT 0
@@ -338,7 +338,7 @@ net coolant-flood     <=  iocontrol.0.coolant-flood
 
 #  ---probe signal---
 
-net probe-in     =>  motion.probe-input
+#net probe-in     =>  motion.probe-input	# moved to custom.hal
 
 #  ---motion control signals---
 
@@ -349,21 +349,8 @@ net machine-is-enabled        <=  motion.motion-enabled
 
 #  ---estop signals---
 
-net estop-out     <=  iocontrol.0.user-enable-out
-net estop-ext     =>  iocontrol.0.emc-enable-in
-
-#  ---manual tool change signals---
-
-net tool-change-request    <= iocontrol.0.tool-change
-net tool-change-confirmed  => iocontrol.0.tool-changed
-net tool-number            <= iocontrol.0.tool-prep-number
-
-#  ---Use external manual tool change dialog---
-
-loadusr -W hal_manualtoolchange
-net tool-change-request    =>  hal_manualtoolchange.change
-net tool-change-confirmed  <=  hal_manualtoolchange.changed
-net tool-number            =>  hal_manualtoolchange.number
+#net estop-out     <=  iocontrol.0.user-enable-out	# moved to custom.hal
+#net estop-ext     =>  iocontrol.0.emc-enable-in	# moved to custom.hal
 
 #  ---ignore tool prepare requests---
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared

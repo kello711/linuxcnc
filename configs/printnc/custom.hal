@@ -1,2 +1,60 @@
 # Include your custom HAL commands here
 # This file will not be overwritten when you run PNCconf again
+
+loadrt estop_latch
+addf estop-latch.0 servo-thread
+
+loadrt oneshot count=1
+addf oneshot.0 servo-thread
+setp oneshot.0.width 0.5    # trigger for half second to allow soft reset of drives
+
+loadrt or2 names=or.probeortls
+addf or.probeortls servo-thread
+
+loadrt debounce cfg=1
+addf debounce.0 servo-thread
+setp debounce.0.delay 3
+
+# --- ESTOP Chain ---
+
+net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out
+net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in
+net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
+net remote-estop estop-latch.0.fault-in <=  hm2_7i96s.0.inm.00.input-10-not
+
+# --- ESTOP Chain End ---
+
+# --- Probe / TLS ---
+
+# --- PROBE-IN ---
+net probe-in	<=	hm2_7i96s.0.inm.00.input-05
+net probe-in	=>	or.probeortls.in0
+
+# --- TLS-Normal-IN ---
+net tls-in	<=	hm2_7i96s.0.inm.00.input-07
+net tls-in	=>	or.probeortls.in1
+
+net debounceProbeTSin debounce.0.0.in	<=	or.probeortls.out
+net debounceProbeTSout debounce.0.0.out	=>	motion.probe-input
+
+# --- Tool Setter Max ---
+net tool-max     <=  hm2_7i96s.0.inm.00.input-08-not
+net tool-max     =>  joint.3.neg-lim-sw-in
+
+# --- RS-485 Spindle Control ---
+
+loadusr -Wn vfd hy_vfd -n vfd -d /dev/ttyUSB0 -p none -r 19200
+
+net spindle-vel-cmd-rpm-abs   	vfd.speed-command
+net spindle-enable             	vfd.spindle-on
+net spindle-cw 					vfd.spindle-forward
+net spindle-ccw 				vfd.spindle-reverse
+net spindle-at-speed 			vfd.spindle-at-speed
+
+setp vfd.enable 1
+
+# --- Drive ALM ---
+
+# Handle drive alarm with oneshot to allow reset via soft reset
+net drive-alarm-in oneshot.0.in <= hm2_7i96s.0.inm.00.input-06
+net drive-alarm-out oneshot.0.out => joint.0.amp-fault-in   #trigger an drive alarm
