@@ -352,6 +352,12 @@ net machine-is-enabled        <=  motion.motion-enabled
 #net estop-out     <=  iocontrol.0.user-enable-out	# moved to custom.hal
 #net estop-ext     =>  iocontrol.0.emc-enable-in	# moved to custom.hal
 
+#  ---manual tool change signals---
+
+net tool-change-request    <= iocontrol.0.tool-change
+net tool-change-confirmed  => iocontrol.0.tool-changed
+net tool-number            <= iocontrol.0.tool-prep-number
+
 #  ---ignore tool prepare requests---
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
 
