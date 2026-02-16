@@ -32,9 +32,8 @@ net probe-in	<=	hm2_7i96s.0.inm.00.input-05  =>	or.probeortls.in0
 # --- TLS-Normal-IN ---
 net tls-in	<=	hm2_7i96s.0.inm.00.input-07  =>	or.probeortls.in1
 
-net probe-out or.probeortls.out  =>  motion.probe-input
-#net debounceProbeTSin debounce.0.0.in	<=	or.probeortls.out
-#net debounceProbeTSout debounce.0.0.out	=>	motion.probe-input
+net debounceProbeTSin debounce.0.0.in	<=	or.probeortls.out
+net probe-out debounce.0.0.out	=>	motion.probe-input
 
 # --- Tool Setter Max ---
 net tool-max     <=  hm2_7i96s.0.inm.00.input-08-not
