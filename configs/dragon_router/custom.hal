@@ -2,9 +2,9 @@
 # This file will not be overwritten when you run PNCconf again
 
 loadrt estop_latch
-loadrt oneshot count=1
-
 addf estop-latch.0 servo-thread
+
+loadrt oneshot count=1
 addf oneshot.0 servo-thread
 setp oneshot.0.width 0.5    # trigger for half second to allow soft reset of drives
 

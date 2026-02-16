@@ -1,9 +1,11 @@
 [DIALOG_GEOMETRY]
 AboutDialog-geometry = 218 135 992 554
 LncMessage-geometry = 910 539 280 118
-ToolChangeDialog-geometry = default
+ToolChangeDialog-geometry = 910 539 340 237
 basicProbeHelpDialog-geometry = 987 399 600 600
 CalculatorDialog-geometry = 910 539 472 376
+VersaHelpDialog-geometry = 660 254 600 600
+_CALCULATOR = 910 539 472 376
 
 [DIALOG_OPTIONS]
 EntryDialog_play_sound = True
@@ -89,7 +91,7 @@ gcodegraphics-user-lat = 0.0
 gcodegraphics-user-lon = 0.0
 
 [CUSTOM_FORM_ENTRIES]
-Tool to load = 0
+Tool to load = 99
 Laser X = 100.0
 Laser Y = -20.0
 Sensor X = 0.3
@@ -97,8 +99,8 @@ Sensor Y = 10.6
 Camera X = 10.0
 Camera Y = 10.0
 Work Height = 20.0
-Touch Height = 40.0
-Sensor Height = 3.0
+Touch Height = 1.897
+Sensor Height = 1.897
 Search Velocity = 20.0
 Probe Velocity = 2.0
 Max Probe = 1.0
@@ -121,7 +123,7 @@ Camview yscale = 100
 Camview cam number = 0
 
 [PROBE OPTIONS]
-Probe tool = 999
+Probe tool = 99
 Probe diameter = 0.0785
 Probe rapid = 100
 Probe feed = 5
@@ -131,10 +133,31 @@ Probe max z = 1.0
 Probe extra depth = .1
 Probe step off = 0.2
 Probe xy clearance = 0.5
-Probe z clearance = .5
+Probe z clearance = 0.5
 Probe edge width = 1.0
 Calibration offset = 0
 Cal x width = 6
 Cal y width = 4
 Cal diameter = 0
+
+[VERSA_PROBE_OPTIONS]
+ps_searchvel = 20.0
+ps_probevel = 5.0
+ps_z_clearance = 0.5
+ps_probe_max = 1.0
+ps_probe_max_z_travel = 1.0
+ps_probe_latch = 0.2
+ps_probe_diam = 0.0785
+ps_xy_clearance = 0.5
+ps_side_edge_length = 3.0
+ps_probe_height = 0.5
+ps_block_height = 3.0
+ps_offs_x = 0.0
+ps_offs_y = 0.0
+ps_offs_z = 0.0
+ps_offs_angle = 0.0
+ps_probe_rapid_vel = 100.0
+use_tool_measurement = True
+use_auto_zero = True
+use_auto_skew = True
 

@@ -3,7 +3,6 @@
 # If you make changes to this file, they will be
 # overwritten when you run PNCconf again
 
-#loadusr -Wn pyvcp pyvcp -c pyvcp [DISPLAY](PYVCP)
 loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
 loadrt hostmot2
@@ -102,7 +101,6 @@ net x-enable     => hm2_7i96s.0.stepgen.00.enable
 # ---setup home / limit switch signals---
 
 net max-home-x     =>  joint.0.home-sw-in
-net x-neg-limit     =>  joint.0.neg-lim-sw-in
 net max-home-x     =>  joint.0.pos-lim-sw-in
 
 #*******************
@@ -400,9 +398,10 @@ net machine-is-enabled        <=  motion.motion-enabled
 
 #  ---manual tool change signals---
 
-net tool-change-request    <= iocontrol.0.tool-change
-net tool-change-confirmed  => iocontrol.0.tool-changed
-net tool-number            <= iocontrol.0.tool-prep-number
+#net tool-change-request    <= iocontrol.0.tool-change
+#net tool-change-confirmed  => iocontrol.0.tool-changed
+#net tool-number            <= iocontrol.0.tool-prep-number
 
 #  ---ignore tool prepare requests---
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
+

@@ -256,8 +256,8 @@ net z-enable     => hm2_7i96s.0.stepgen.03.enable
 # ---setup home / limit switch signals---
 
 net max-home-z     =>  joint.3.home-sw-in
-net z-neg-limit     =>  joint.3.neg-lim-sw-in
 net max-home-z     =>  joint.3.pos-lim-sw-in
+#net z-neg-limit     =>  joint.3.neg-lim-sw-in	# moved to custom.hal
 
 #*******************
 #  SPINDLE
