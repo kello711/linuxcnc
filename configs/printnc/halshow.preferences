@@ -1,0 +1,33 @@
+# Halshow settings
+# This file is generated automatically.
+wm geometry . 1178x555+740+27
+placeFrames 0.30017152658662094
+set ::ratio 0.30017152658662094
+set ::old_w_leftf 350
+set ::watchlist {
+    sig+spindle-at-speed
+    sig+spindle-cw
+    sig+spindle-ccw
+    sig+spindle-enable
+    sig+spindle-output
+    sig+spindle-vel-cmd-rpm-abs
+    pin+qtpyvcp.spindle-encoder-rpm.in
+    pin+qtpyvcp.spindle-encoder-rpm.enable
+    pin+qtpyvcp.spindle-override.reset
+    pin+spindle.0.forward
+    pin+spindle.0.reverse
+    pin+spindle.0.at-speed
+    pin+vfd.spindle-speed-fb
+    pin+qtpyvcp.spindle-load-indicator.in-f
+    pin+qtpyvcp.spindle-load-indicator.max-val
+    pin+qtpyvcp.spindle-load-indicator.min-val
+    pin+load-conv.0.rpm
+    pin+load-conv.0.percent
+}
+set ::workmode watchhal
+set ::watchInterval 100
+set ::col1_width 100
+set ::ffmts 
+set ::ifmts 
+set ::alwaysOnTop 0
+set ::autoSaveWatchlist 1
