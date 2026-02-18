@@ -1,5 +1,5 @@
 T1   P1   D+0.125000 Z+3.566440 ; 1/8 end mill Sample Tool
 T2   P2   D+0.062500 Z+0.100000 ; 1/16 end mill Sample Tool
 T3   P3   D+0.201000 Z+1.273000 ; #7 tap drill Sample Tool
-T4   P0   D+6.000000 Z+3.716557 ; 6mm DLC End MILL (DSA1F-D6.0-L22)
+T4   P0   D+0.236200 Z+5.568818 ; 6mm DLC End MILL (DSA1F-D6.0-L22)
 T99  P99  D+0.078500 Z+3.272207 ; 3d Probe
