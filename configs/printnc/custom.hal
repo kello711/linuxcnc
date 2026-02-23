@@ -15,11 +15,19 @@ loadrt debounce cfg=1
 addf debounce.0 servo-thread
 setp debounce.0.delay 3
 
+# --- Shared halui components ---
+# for xhc-whb04b-6 pendant and Probe basic
+
+net prog-running <= halui.program.is-idle
+net prog-paused <= halui.program.is-paused
+
 # --- ESTOP Chain ---
 
 net estop-loopout iocontrol.0.emc-enable-in <= estop-latch.0.ok-out
 net estop-loopin iocontrol.0.user-enable-out => estop-latch.0.ok-in
 net estop-reset iocontrol.0.user-request-enable => estop-latch.0.reset
+#net remote-estop => estop-latch.0.reset
+
 net remote-estop estop-latch.0.fault-in <=  hm2_7i96s.0.inm.00.input-10-not
 
 # --- ESTOP Chain End ---
@@ -44,4 +52,3 @@ net tool-max     =>  joint.3.neg-lim-sw-in
 # Handle drive alarm with oneshot to allow reset via soft reset
 net drive-alarm-in oneshot.0.in <= hm2_7i96s.0.inm.00.input-06
 net drive-alarm-out oneshot.0.out => joint.0.amp-fault-in   #trigger an drive alarm
-
