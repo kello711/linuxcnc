@@ -834,7 +834,7 @@ class Ui_offset_dros_xyzab(object):
 "}")
         self.dro_entry_offset_c.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.dro_entry_offset_c.setProperty("referenceType", 1)
-        self.dro_entry_offset_c.setProperty("axisNumber", 4)
+        self.dro_entry_offset_c.setProperty("axisNumber", 5)
         self.dro_entry_offset_c.setProperty("latheMode", 0)
         self.dro_entry_offset_c.setObjectName("dro_entry_offset_c")
         self.c_axis_dro_layout.addWidget(self.dro_entry_offset_c)
@@ -866,7 +866,7 @@ class Ui_offset_dros_xyzab(object):
 "}")
         self.drolabel_work_c.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.drolabel_work_c.setProperty("referenceType", 0)
-        self.drolabel_work_c.setProperty("axisNumber", 4)
+        self.drolabel_work_c.setProperty("axisNumber", 5)
         self.drolabel_work_c.setProperty("latheMode", 0)
         self.drolabel_work_c.setObjectName("drolabel_work_c")
         self.c_axis_dro_layout.addWidget(self.drolabel_work_c)
@@ -1075,9 +1075,9 @@ class Ui_offset_dros_xyzab(object):
         self.drolabel_work_c.setProperty("inchFormat", _translate("offset_dros_xyzab", "%9.4f"))
         self.drolabel_work_c.setProperty("millimeterFormat", _translate("offset_dros_xyzab", "%10.3f"))
         self.drolabel_work_c.setProperty("degreeFormat", _translate("offset_dros_xyzab", "%10.2f"))
-        self.work_offset_c.setProperty("rules", _translate("offset_dros_xyzab", "[{\"channels\": [{\"trigger\": true, \"type\": \"tuple\", \"url\": \"status:g92_offset\"}], \"property\": \"Text\", \"expression\": \"\\\"{:.4f}\\\".format(ch[0][4])\", \"name\": \"New Rule\"}]"))
-        self.g52_g92_c.setProperty("rules", _translate("offset_dros_xyzab", "[{\"channels\": [{\"trigger\": true, \"type\": \"tuple\", \"url\": \"status:g5x_offset\"}], \"property\": \"Text\", \"expression\": \"\\\"{:.4f}\\\".format(ch[0][4])\", \"name\": \"New Rule\"}]"))
-        self.tool_offset_c.setProperty("rules", _translate("offset_dros_xyzab", "[{\"channels\": [{\"trigger\": true, \"type\": \"tuple\", \"url\": \"status:tool_offset\"}], \"property\": \"Text\", \"expression\": \"\\\"{:.4f}\\\".format(ch[0][4])\", \"name\": \"New Rule\"}]"))
+        self.work_offset_c.setProperty("rules", _translate("offset_dros_xyzab", "[{\"channels\": [{\"trigger\": true, \"type\": \"tuple\", \"url\": \"status:g92_offset\"}], \"property\": \"Text\", \"expression\": \"\\\"{:.4f}\\\".format(ch[0][5])\", \"name\": \"New Rule\"}]"))
+        self.g52_g92_c.setProperty("rules", _translate("offset_dros_xyzab", "[{\"channels\": [{\"trigger\": true, \"type\": \"tuple\", \"url\": \"status:g5x_offset\"}], \"property\": \"Text\", \"expression\": \"\\\"{:.4f}\\\".format(ch[0][5])\", \"name\": \"New Rule\"}]"))
+        self.tool_offset_c.setProperty("rules", _translate("offset_dros_xyzab", "[{\"channels\": [{\"trigger\": true, \"type\": \"tuple\", \"url\": \"status:tool_offset\"}], \"property\": \"Text\", \"expression\": \"\\\"{:.4f}\\\".format(ch[0][5])\", \"name\": \"New Rule\"}]"))
 from qtpyvcp.widgets.button_widgets.mdi_button import MDIButton
 from qtpyvcp.widgets.display_widgets.dro_label import DROLabel
 from qtpyvcp.widgets.display_widgets.status_label import StatusLabel

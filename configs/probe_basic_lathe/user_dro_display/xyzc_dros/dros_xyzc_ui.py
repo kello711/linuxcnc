@@ -673,7 +673,7 @@ class Ui_dros_xyzc(object):
 "        \"property\": \"None\"\n"
 "    }\n"
 "]"))
-        self.zero_all_button.setProperty("MDICommand", _translate("dros_xyzc", "G10 L20 P{ch[0]} X0.0 Z0.0"))
+        self.zero_all_button.setProperty("MDICommand", _translate("dros_xyzc", "G10 L20 P{ch[0]} X0.0 Y0.0 Z0.0 C0.0"))
         self.work_column_header.setProperty("rules", _translate("dros_xyzc", "[{\"channels\": [{\"url\": \"status:g5x_index?text\", \"trigger\": true}], \"property\": \"Text\", \"expression\": \"ch[0] + \' WORK\'\\n\", \"name\": \"WCS Header\"}]"))
         self.machine_column_header.setText(_translate("dros_xyzc", "MACHINE"))
         self.dtg_column_header.setText(_translate("dros_xyzc", "DTG"))

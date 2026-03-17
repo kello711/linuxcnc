@@ -657,7 +657,7 @@ class Ui_offset_dros_xyzc(object):
 "        \"property\": \"None\"\n"
 "    }\n"
 "]"))
-        self.zero_x_button_offset.setProperty("MDICommand", _translate("offset_dros_xyzc", "G10 L20 P{ch[0]} X0.0"))
+        self.zero_x_button_offset.setProperty("MDICommand", _translate("offset_dros_xyzc", "G10 L20 P{ch[0]} Y0.0"))
         self.axis_label_x.setText(_translate("offset_dros_xyzc", "X"))
         self.drolabel_work_x.setProperty("inchFormat", _translate("offset_dros_xyzc", "%9.4f"))
         self.drolabel_work_x.setProperty("millimeterFormat", _translate("offset_dros_xyzc", "%10.3f"))
