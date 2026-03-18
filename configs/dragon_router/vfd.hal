@@ -1,0 +1,12 @@
+# --- RS-485 Spindle Control ---
+
+loadusr -Wn vfd hy_vfd -n vfd -d /dev/ttyUSB0 -p none -r 19200
+
+net spindle-vel-cmd-rpm-abs   	vfd.speed-command
+net spindle-enable             	vfd.spindle-on
+net spindle-cw 			vfd.spindle-forward
+net spindle-ccw 		vfd.spindle-reverse
+net spindle-at-speed 		vfd.spindle-at-speed <= spindle.0.at-speed
+net spindle-speed-fb		vfd.spindle-speed-fb
+
+setp vfd.enable 1
