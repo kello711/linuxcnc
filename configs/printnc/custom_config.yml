@@ -8,7 +8,7 @@ data_plugins:
   tooltable:
     provider: qtpyvcp.plugins.tool_table:ToolTable
     kwargs:
-      columns: TZDR
+      columns: TZDIR
 
   offsettable:
     provider: qtpyvcp.plugins.offset_table:OffsetTable
@@ -48,7 +48,7 @@ settings:
 
   rack-atc-setup.user-param-1:
     description: user param label name
-    default_value: user param 1 
+    default_value: user param 1
     persistent: true
 
   rack-atc-setup.user-param-2:
@@ -80,4 +80,3 @@ settings:
     description: tool setter user param 2
     default_value: user param 2
     persistent: true
-
