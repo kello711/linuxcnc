@@ -1,11 +1,13 @@
-T1   P1   D+0.125000 Z+3.566440 ; 1/8 end mill Sample Tool
-T2   P2   D+0.062500 Z+0.100000 ; 1/16 end mill Sample Tool
-T3   P3   D+0.201000 Z+1.273000 ; #7 tap drill Sample Tool
-T4   P0   D+0.236200 Z+3.688692 ; 6mm DLC End MILL (DSA1F-D6.0-L22)
-T5   P0   D+0.196900 ; 5mm DriLL
-T6   P0   D+0.255900 ; 6.5mm dRILL
-T10  P0   Z+3.791137 ; 6MM COUNTER BORE
-T11  P0   D+0.984000 Z+2.056925 ; BAP - EAP300r (C12-25-80-3T)
-T90  P0   D+1.000000 Z+1.953058 ; 1" Wood surfacing bit
-T99  P99  D+0.078500 Z+2.519630 ; 3d Probe
-T100 P0   D+1.000000 Z+5.555837 ; SPINDLE NOSE
+;Tool  Pocket Z Offset     Diameter     Fnt Ang      Remark
+T1     P1     Z+0.000000   D+0.125000   I+0.000000   ; 1/8 end mill Sample Tool
+T2     P2     Z+0.000000   D+0.062500   I+0.000000   ; 1/16 end mill Sample Tool
+T3     P3     Z+0.000000   D+0.201000   I+0.000000   ; #7 tap drill Sample Tool
+T4     P0     Z+0.000000   D+0.236200   I+0.000000   ; 6mm DLC End MILL (DSA1F-D6.0-L22)
+T5     P0     Z+0.000000   D+0.196900   I+0.000000   ; 5mm DriLL
+T6     P0     Z+0.000000   D+0.255900   I+0.000000   ; 6.5mm dRILL
+T10    P0     Z+0.000000   D+0.000000   I+0.000000   ; 6MM COUNTER BORE
+T11    P0     Z+0.000000   D+0.984000   I+0.000000   ; BAP - EAP300r (C12-25-80-3T)
+T12    P0     Z+2.245226   D+0.396800   I+0.000000   ; BAP - EAP300R (C10-10-100-1T)
+T90    P0     Z+1.747727   D+1.000000   I+0.000000   ; 1" Wood surfacing bit
+T99    P99    Z+2.380790   D+0.078500   I+0.000000   ; 3d Probe
+T100   P0     Z+0.000000   D+1.000000   I+0.000000   ; SPINDLE NOSE
