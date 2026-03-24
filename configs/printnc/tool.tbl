@@ -8,7 +8,8 @@ T6     P6     Z+0.000000   D+00.31496   I+0.000000   ; Dreanique - 3F 8mm x 24mm
 T7     P7     Z+0.000000   D+00.15748   I+0.000000   ; Dreanique - 1F 4mm x 22mm End Mill DLC
 T8     P8     Z+0.000000   D+00.23622   I+0.000000   ; Dreanique - 1F 6mm x 22mm End Mill DLC
 T9     P9     Z+0.000000   D+00.31496   I+0.000000   ; Dreanique - 1F 8mm x 25mm End Mill DLC
-T10    P10    Z+0.000000   D+00.15748   I+0.000000   ; Dreanique - 3F 4mm R90 Chamfer Mill
+T10    P10    Z+0.000000   D+00.12500   I+0.000000   ; Generic - 1/8in 1F End Mill
+T11    P11    Z+0.000000   D+00.15748   I+0.000000   ; Dreanique - 3F 4mm R90 Chamfer Mill
 T11    P11    Z+0.000000   D+00.06102   I+0.000000   ; Dreanique - M2 1F Thread Mill
 T12    P12    Z+0.000000   D+00.12402   I+0.000000   ; Dreanique - M4 1F Thread Mill
 T13    P13    Z+0.000000   D+00.18898   I+0.000000   ; Dreanique - M6 1F Thread Mill
