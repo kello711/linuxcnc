@@ -1,5 +1,5 @@
 T1   P0   D+0.236220 Z+1.282090 ; BB - 6mm 3F Carbide End Mill DLC (BC3055)
-T2   P0   D+0.236220 ; BB - 6mm 3F Carbide Roughing End Mill DLC (BC2055)
+T2   P0   D+0.236220 Z+1.735963 ; BB - 6mm 3F Carbide Roughing End Mill DLC (BC2055)
 T3   P0   D+0.039370 ; BB - 2F R0.5 Ball Nose End Mill DLC (BC2055)
 T4   P0   D+0.157480 ; BB - 2F R2 Ball Nose End Mill DLC (BC2055)
 T5   P0   D+0.236220 ; Dreanique - 3F 6mm x 18mm End Mill DLC
@@ -14,6 +14,6 @@ T13  P0   D+0.124020 ; Dreanique - M4 1F Thread Mill
 T14  P0   D+0.188980 ; Dreanique - M6 1F Thread Mill
 T15  P0   D+0.393700 ; BB - 1F BAP 10mm
 T16  P0   D+0.984250 Z+1.891046 ; BB - 3F BAP 25mm
-T90  P0   D+1.000000 Z+1.741390 ; 1" Wood surfacing bit
-T99  P0   D+0.078500 Z+2.345693 ; 3d Probe
+T90  P0   D+1.000000 Z+1.743656 ; 1" Wood surfacing bit
+T99  P0   D+0.078500 Z+2.434726 ; 3d Probe
 T100 P0   D+1.000000 ; SPINDLE NOSE
