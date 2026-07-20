@@ -54,5 +54,7 @@ net tool-air => hm2_7i96s.0.ssr.00.out-02
 
 # Handle drive alarm with oneshot to allow reset via soft reset
 net drive-alarm-in oneshot.0.in <= hm2_7i96s.0.inm.00.input-06
-net drive-alarm-out oneshot.0.out => joint.0.amp-fault-in   #trigger an drive alarm
-
+net drive-alarm-out oneshot.0.out => joint.0.amp-fault-in   #trigger a drive alarm - X
+net drive-alarm-out => joint.1.amp-fault-in                 #trigger a drive alarm - Y
+net drive-alarm-out => joint.2.amp-fault-in                 #trigger a drive alarm - Y2
+net drive-alarm-out => joint.3.amp-fault-in                 #trigger a drive alarm - Z
