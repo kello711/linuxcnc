@@ -14,6 +14,7 @@ T13  P0   D+0.124020 ; Dreanique - M4 1F Thread Mill
 T14  P0   D+0.188980 ; Dreanique - M6 1F Thread Mill
 T15  P0   D+0.393700 ; BB - 1F BAP 10mm
 T16  P0   D+0.984250 Z+1.891046 ; BB - 3F BAP 25mm
-T90  P0   D+1.000000 Z+1.743656 ; 1" Wood surfacing bit
-T99  P0   D+0.078500 Z+2.434726 ; 3d Probe
+T90  P0   D+1.000000 Z+1.743188 ; 1" Wood surfacing bit
+T99  P0   D+0.078500 Z+2.464424 ; 3d Probe
 T100 P0   D+1.000000 ; SPINDLE NOSE
+T101 P0   Z+2.771265 ; 5mm Drill bit
