@@ -1,0 +1,51 @@
+(LinuxCNC X and Y Axis Stress Test Loop)
+G21 (Set units to millimeters)
+G90 (Absolute distance mode)
+G61 (Exact path mode - forces machine to hit target velocity before reversing)
+
+(--- CONFIGURATION VARIABLES ---)
+#<loop_count> = 0
+#<max_loops>  = 10     (Number of back-and-forth passes)
+#<feed_rate>  = 20000  (Keep this higher than your INI limits to let LinuxCNC max out)
+
+(--- TRAVEL LIMITS - Adjust to match your PrintNC's working envelope ---)
+#<x_start> = 20
+#<x_end>   = 400
+#<y_start> = 20
+#<y_end>   = 400
+
+(--- SELECT TEST TYPE: 1 = Run, 0 = Skip ---)
+#<test_x_only>     = 0
+#<test_y_only>     = 0
+#<test_simultaneous> = 0  (Highly recommended to stress test the power supply)
+
+(--- MOVE TO SAFE START POSITION ---)
+G0 X#<x_start> Y#<y_start>
+
+(--- RUN O-WORD TUNING LOOP ---)
+O100 while [#<loop_count> LT #<max_loops>]
+
+    (--- TEST X AXIS ONLY ---)
+    O110 if [#<test_x_only> EQ 1]
+        G1 X#<x_end> F#<feed_rate>
+        G1 X#<x_start> F#<feed_rate>
+    O110 endif
+
+    (--- TEST Y AXIS ONLY ---)
+    O120 if [#<test_y_only> EQ 1]
+        G1 Y#<y_end> F#<feed_rate>
+        G1 Y#<y_start> F#<feed_rate>
+    O120 endif
+
+    (--- TEST BOTH AXES AT SAME TIME ---)
+    O130 if [#<test_simultaneous> EQ 1]
+        G1 X#<x_end> Y#<y_end> F#<feed_rate>
+        G1 X#<x_start> Y#<y_start> F#<feed_rate>
+    O130 endif
+
+    #<loop_count> = [#<loop_count> + 1]
+O100 endwhile
+
+(--- RETURN TO HOME AREA SAFETY ---)
+G0 X#<x_start> Y#<y_start>
+M2 (End of program)
