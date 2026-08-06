@@ -17,7 +17,7 @@ G61 (Exact path mode - forces machine to hit target velocity before reversing)
 (--- SELECT TEST TYPE: 1 = Run, 0 = Skip ---)
 #<test_x_only>     = 0
 #<test_y_only>     = 0
-#<test_simultaneous> = 0  (Highly recommended to stress test the power supply)
+#<test_simultaneous> = 1  (Highly recommended to stress test the power supply)
 
 (--- MOVE TO SAFE START POSITION ---)
 G0 X#<x_start> Y#<y_start>
