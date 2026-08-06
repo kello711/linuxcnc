@@ -6,7 +6,7 @@
 loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS num_dio=6 num_aio=3
 loadrt hostmot2
-loadrt hm2_eth board_ip="192.168.1.121" config="num_encoders=0 num_pwmgens=0 num_stepgens=4" 
+loadrt hm2_eth board_ip="192.168.1.121" config="num_encoders=0 num_pwmgens=0 num_stepgens=4"
 setp    hm2_7i96s.0.watchdog.timeout_ns 5000000
 loadrt pid names=pid.x,pid.y,pid.y2,pid.z,pid.s
 
@@ -64,7 +64,7 @@ setp   pid.x.error-previous-target true
 # This setting is to limit bogus stepgen
 # velocity corrections caused by position
 # feedback sample time jitter.
-setp   pid.x.maxerror 0.000500
+setp   pid.x.maxerror 0 ; 0.000500
 
 net x-index-enable  =>  pid.x.index-enable
 net x-enable        =>  pid.x.enable
@@ -117,7 +117,7 @@ setp   pid.y.error-previous-target true
 # This setting is to limit bogus stepgen
 # velocity corrections caused by position
 # feedback sample time jitter.
-setp   pid.y.maxerror 0.000500
+setp   pid.y.maxerror 0 ; 0.000500
 
 net y-index-enable  =>  pid.y.index-enable
 net y-enable        =>  pid.y.enable
@@ -170,7 +170,7 @@ setp   pid.y2.error-previous-target true
 # This setting is to limit bogus stepgen
 # velocity corrections caused by position
 # feedback sample time jitter.
-setp   pid.y2.maxerror 0.000500
+setp   pid.y2.maxerror 0 ; 0.000500
 
 net y2-index-enable  =>  pid.y2.index-enable
 net y2-enable        =>  pid.y2.enable
@@ -223,7 +223,7 @@ setp   pid.z.error-previous-target true
 # This setting is to limit bogus stepgen
 # velocity corrections caused by position
 # feedback sample time jitter.
-setp   pid.z.maxerror 0.000500
+setp   pid.z.maxerror 0 ; 0.000500
 
 net z-index-enable  =>  pid.z.index-enable
 net z-enable        =>  pid.z.enable
@@ -360,4 +360,3 @@ net tool-number            <= iocontrol.0.tool-prep-number
 
 #  ---ignore tool prepare requests---
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
-
