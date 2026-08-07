@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/bb/work/probe_basic-pyqt5-x86/sources/debian/python3-probe-basic/usr/share/configs/atc_sim/user_atc_buttons/template_user_rack_atc_buttons/template_user_rack_atc_buttons.ui'
+# Form implementation generated from reading ui file '/__w/probe_basic/probe_basic/source/debian/python3-probe-basic/usr/share/configs/atc_sim/user_atc_buttons/template_user_rack_atc_buttons/template_user_rack_atc_buttons.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_USER_ATC_BUTTONS(object):
     def setupUi(self, USER_ATC_BUTTONS):
         USER_ATC_BUTTONS.setObjectName("USER_ATC_BUTTONS")
-        USER_ATC_BUTTONS.resize(300, 429)
+        USER_ATC_BUTTONS.resize(300, 403)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -135,7 +135,7 @@ class Ui_USER_ATC_BUTTONS(object):
         self.clamp_tool_button.setObjectName("clamp_tool_button")
         self.horizontalLayout_117.addWidget(self.clamp_tool_button)
         self.release_tool_button = SubCallButton(self.frame_64)
-        self.release_tool_button.setEnabled(False)
+        self.release_tool_button.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(0)
@@ -295,9 +295,6 @@ class Ui_USER_ATC_BUTTONS(object):
         self.move_tool_to_carousel_height_button.setObjectName("move_tool_to_carousel_height_button")
         self.horizontalLayout_174.addWidget(self.move_tool_to_carousel_height_button)
         self.verticalLayout_66.addLayout(self.horizontalLayout_174)
-        self.widget_10 = QtWidgets.QWidget(self.frame_64)
-        self.widget_10.setObjectName("widget_10")
-        self.verticalLayout_66.addWidget(self.widget_10)
         self.horizontalLayout_159 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_159.setContentsMargins(2, 2, 2, 2)
         self.horizontalLayout_159.setSpacing(15)

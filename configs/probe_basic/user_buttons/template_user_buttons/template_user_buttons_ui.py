@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/bb/work/probe_basic-pyqt5-x86/sources/debian/python3-probe-basic/usr/share/configs/probe_basic/user_buttons/template_user_buttons/template_user_buttons.ui'
+# Form implementation generated from reading ui file '/__w/probe_basic/probe_basic/source/debian/python3-probe-basic/usr/share/configs/probe_basic/user_buttons/template_user_buttons/template_user_buttons.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #

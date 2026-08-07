@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/bb/work/probe_basic-pyqt5-x86/sources/debian/python3-probe-basic/usr/share/configs/probe_basic_lathe/user_dro_display/xz_dros/dros_xz.ui'
+# Form implementation generated from reading ui file '/__w/probe_basic/probe_basic/source/debian/python3-probe-basic/usr/share/configs/probe_basic_lathe/user_dro_display/xz_dros/dros_xz.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -424,26 +424,42 @@ class Ui_dros_xz(object):
         self.widget.setObjectName("widget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setSpacing(30)
+        self.horizontalLayout.setSpacing(15)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.zero_all_button = MDIButton(self.widget)
-        self.zero_all_button.setEnabled(False)
+        self.g20_button = MDIButton(self.widget)
+        self.g20_button.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.zero_all_button.sizePolicy().hasHeightForWidth())
-        self.zero_all_button.setSizePolicy(sizePolicy)
-        self.zero_all_button.setMinimumSize(QtCore.QSize(60, 40))
-        self.zero_all_button.setMaximumSize(QtCore.QSize(16777215, 40))
-        self.zero_all_button.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.zero_all_button.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.zero_all_button.setStyleSheet("MDIButton {\n"
+        sizePolicy.setHeightForWidth(self.g20_button.sizePolicy().hasHeightForWidth())
+        self.g20_button.setSizePolicy(sizePolicy)
+        self.g20_button.setMinimumSize(QtCore.QSize(60, 40))
+        self.g20_button.setMaximumSize(QtCore.QSize(110, 40))
+        self.g20_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.g20_button.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.g20_button.setStyleSheet("MDIButton {\n"
 "       font: 14pt \"Bebas Kai\";\n"
 "}")
-        self.zero_all_button.setIcon(icon)
-        self.zero_all_button.setIconSize(QtCore.QSize(20, 20))
-        self.zero_all_button.setObjectName("zero_all_button")
-        self.horizontalLayout.addWidget(self.zero_all_button)
+        self.g20_button.setIconSize(QtCore.QSize(20, 20))
+        self.g20_button.setObjectName("g20_button")
+        self.horizontalLayout.addWidget(self.g20_button)
+        self.g21_button = MDIButton(self.widget)
+        self.g21_button.setEnabled(False)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.g21_button.sizePolicy().hasHeightForWidth())
+        self.g21_button.setSizePolicy(sizePolicy)
+        self.g21_button.setMinimumSize(QtCore.QSize(60, 40))
+        self.g21_button.setMaximumSize(QtCore.QSize(110, 40))
+        self.g21_button.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.g21_button.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.g21_button.setStyleSheet("MDIButton {\n"
+"       font: 14pt \"Bebas Kai\";\n"
+"}")
+        self.g21_button.setIconSize(QtCore.QSize(20, 20))
+        self.g21_button.setObjectName("g21_button")
+        self.horizontalLayout.addWidget(self.g21_button)
         self.ref_all_button = ActionButton(self.widget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -515,8 +531,8 @@ class Ui_dros_xz(object):
         self.ref_z_button.setText(_translate("dros_xz", "REF Z"))
         self.ref_z_button.setProperty("rules", _translate("dros_xz", "[{\"name\": \"home_inhibit\", \"property\": \"Enable\", \"expression\": \"not (ch[0] or ch[1])\", \"channels\": [{\"url\": \"status:joint.0.homing\", \"trigger\": true}, {\"url\": \"status:joint.1.homing\", \"trigger\": true}]}]"))
         self.ref_z_button.setProperty("actionName", _translate("dros_xz", "machine.home.axis:z"))
-        self.zero_all_button.setText(_translate("dros_xz", "ALL"))
-        self.zero_all_button.setProperty("rules", _translate("dros_xz", "[\n"
+        self.g20_button.setText(_translate("dros_xz", "G20 INCH"))
+        self.g20_button.setProperty("rules", _translate("dros_xz", "[\n"
 "    {\n"
 "        \"channels\": [\n"
 "            {\n"
@@ -530,7 +546,23 @@ class Ui_dros_xz(object):
 "        \"property\": \"None\"\n"
 "    }\n"
 "]"))
-        self.zero_all_button.setProperty("MDICommand", _translate("dros_xz", "G10 L20 P{ch[0]} X0.0 Z0.0"))
+        self.g20_button.setProperty("MDICommand", _translate("dros_xz", "G20"))
+        self.g21_button.setText(_translate("dros_xz", "G21 MM"))
+        self.g21_button.setProperty("rules", _translate("dros_xz", "[\n"
+"    {\n"
+"        \"channels\": [\n"
+"            {\n"
+"                \"url\": \"status:g5x_index\",\n"
+"                \"trigger\": true,\n"
+"                \"type\": \"int\"\n"
+"            }\n"
+"        ],\n"
+"        \"expression\": \"\",\n"
+"        \"name\": \"G5x Index\",\n"
+"        \"property\": \"None\"\n"
+"    }\n"
+"]"))
+        self.g21_button.setProperty("MDICommand", _translate("dros_xz", "G21"))
         self.ref_all_button.setText(_translate("dros_xz", "REF ALL"))
         self.ref_all_button.setProperty("rules", _translate("dros_xz", "[{\"channels\": [{\"url\": \"status:all_axes_homed\", \"trigger\": true}], \"property\": \"Text\", \"expression\": \"\'HOMED\' if ch[0] else \'REF ALL\'\", \"name\": \"reference_all\"}, {\"name\": \"home_inhibit\", \"property\": \"Enable\", \"expression\": \"not (ch[0] or ch[1])\", \"channels\": [{\"url\": \"status:joint.0.homing\", \"trigger\": true}, {\"url\": \"status:joint.1.homing\", \"trigger\": true}]}]"))
         self.ref_all_button.setProperty("actionName", _translate("dros_xz", "machine.home.all"))

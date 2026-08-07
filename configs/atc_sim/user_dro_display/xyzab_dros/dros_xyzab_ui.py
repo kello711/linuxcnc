@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/bb/work/probe_basic-pyqt5-x86/sources/debian/python3-probe-basic/usr/share/configs/atc_sim/user_dro_display/xyzab_dros/dros_xyzab.ui'
+# Form implementation generated from reading ui file '/__w/probe_basic/probe_basic/source/debian/python3-probe-basic/usr/share/configs/atc_sim/user_dro_display/xyzab_dros/dros_xyzab.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #

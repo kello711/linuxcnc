@@ -11,9 +11,31 @@ setp oneshot.0.width 0.5    # trigger for half second to allow soft reset of dri
 loadrt or2 names=or.probeortls
 addf or.probeortls servo-thread
 
-loadrt debounce cfg=1
+# =========================================================
+# Shared Software Debounce Filtering (cfg=6 Channels total)
+# =========================================================
+
+loadrt debounce cfg=6
 addf debounce.0 servo-thread
-setp debounce.0.delay 3
+setp debounce.0.delay 20
+
+# Safely break the noisy raw inputs away from your main HAL file signals
+unlinkp hm2_7i96s.0.inm.00.input-00-not
+unlinkp hm2_7i96s.0.inm.00.input-01-not
+unlinkp hm2_7i96s.0.inm.00.input-02-not
+unlinkp hm2_7i96s.0.inm.00.input-03-not
+
+# Feed the raw Mesa inputs directly into the new debounce filter channels
+net raw-limit-x  <= hm2_7i96s.0.inm.00.input-00-not => debounce.0.1.in
+net raw-limit-y  <= hm2_7i96s.0.inm.00.input-01-not => debounce.0.2.in
+net raw-limit-z  <= hm2_7i96s.0.inm.00.input-02-not => debounce.0.3.in
+net raw-limit-y2 <= hm2_7i96s.0.inm.00.input-03-not => debounce.0.4.in
+
+# Route the beautifully cleaned debounce outputs back into your machine nets
+net max-home-x   <= debounce.0.1.out
+net max-home-y   <= debounce.0.2.out
+net max-home-z   <= debounce.0.3.out
+net max-home-y2  <= debounce.0.4.out
 
 # --- Shared halui components ---
 # for xhc-whb04b-6 pendant and Probe basic
@@ -43,9 +65,12 @@ net tls-in	<=	hm2_7i96s.0.inm.00.input-07  =>	or.probeortls.in1
 net debounceProbeTSin debounce.0.0.in	<=	or.probeortls.out
 net probe-out debounce.0.0.out	=>	motion.probe-input
 
-# --- Tool Setter Max ---
-net tool-max     <=  hm2_7i96s.0.inm.00.input-08-not
-net tool-max     =>  joint.3.neg-lim-sw-in
+# =========================================================
+# Debounced Tool Setter Max Over-Travel Switch (Joint 3 Noise Fix)
+# =========================================================
+net raw-tool-max <= hm2_7i96s.0.inm.00.input-08-not => debounce.0.5.in
+net tool-max     <= debounce.0.5.out                => joint.3.neg-lim-sw-in
+
 
 # --- Tool Setter Air ---
 net tool-air => hm2_7i96s.0.ssr.00.out-02

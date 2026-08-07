@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/bb/work/probe_basic-pyqt5-x86/sources/debian/python3-probe-basic/usr/share/configs/probe_basic/user_atc_buttons/template_user_atc_buttons/template_user_atc_buttons.ui'
+# Form implementation generated from reading ui file '/__w/probe_basic/probe_basic/source/debian/python3-probe-basic/usr/share/configs/probe_basic/user_atc_buttons/template_user_atc_buttons/template_user_atc_buttons.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_USER_ATC_BUTTONS(object):
     def setupUi(self, USER_ATC_BUTTONS):
         USER_ATC_BUTTONS.setObjectName("USER_ATC_BUTTONS")
-        USER_ATC_BUTTONS.resize(299, 508)
+        USER_ATC_BUTTONS.resize(300, 478)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -376,15 +376,6 @@ class Ui_USER_ATC_BUTTONS(object):
         self.move_tool_to_carousel_height_button.setObjectName("move_tool_to_carousel_height_button")
         self.horizontalLayout_118.addWidget(self.move_tool_to_carousel_height_button)
         self.verticalLayout_66.addLayout(self.horizontalLayout_118)
-        self.label_20 = QtWidgets.QLabel(self.widget_64)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
-        self.label_20.setSizePolicy(sizePolicy)
-        self.label_20.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_20.setObjectName("label_20")
-        self.verticalLayout_66.addWidget(self.label_20)
         self.horizontalLayout_119 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_119.setContentsMargins(2, 2, 2, 2)
         self.horizontalLayout_119.setSpacing(15)
