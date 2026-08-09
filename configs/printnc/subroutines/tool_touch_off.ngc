@@ -13,18 +13,18 @@
 
 
 o<tool_touch_off> sub
-;Ensures that the routine is not run when checking the CNC program. 
+;Ensures that the routine is not run when checking the CNC program.
 ;This can sometimes lead to unjustified errors.
 o<400> if [#<_task> EQ 1]
 
 ;-1- Fixed parameters
 ;-MAIN-
 #<debug_mode> = 0		    ;The debug mode for troubleshooting is set here. 0=OFF, 1=log file . File in the machine's config folder.
-#<tool_touch_x_coords> = 1.9415     ;Position of the length button in X
-#<tool_touch_y_coords> = 2.3565      ;Position of the length button in Y
-#<tool_touch_z_coords> = -5.61      ;Position above the length button in Z
-#<use_tool_table> = 1               ;If "1" the machine uses the tool table for positioning the tool over the 
-#<tool_min_dis> = 1                 ;Distance, when measuring a known tool again, between the touch plate and the tool.
+#<tool_touch_x_coords> = 49.3141    ;Position of the length button in X
+#<tool_touch_y_coords> = 59.8551    ;Position of the length button in Y
+#<tool_touch_z_coords> = -142.494   ;Position above the length button in Z
+#<use_tool_table> = 1               ;If "1" the machine uses the tool table for positioning the tool over the
+#<tool_min_dis> = 25.0              ;Distance, when measuring a known tool again, between the touch plate and the tool.
 
 ;-OPTIONS-
 ;--Generally--
@@ -36,15 +36,15 @@ o<400> if [#<_task> EQ 1]
 #<lasttry> = 0                      ;If "1" the machine do a probing at the last repetition without the tool table. #<addreps> must be min "1".
 
 ;--Tool diameter--
-#<offset_diameter> = 0.8              ;Tool diameter from when a offset should take place. 0=OFF
-;Direction of the offset will be set in Probe Basic (#<tool_setter_offset_direction>). 
+#<offset_diameter> = 20.0           ;Tool diameter from when a offset should take place. 0=OFF
+;Direction of the offset will be set in Probe Basic (#<tool_setter_offset_direction>).
 #<offset_value> = 50                ;How much of the tool diameter should move in percent.
 
 ;--Tool edge-finder--
 #<finder_number> = 0                ;Tool number of the edge-finder
 #<finder_touch_x_coords> = 0        ;x coordinate for the z reference position in G53
 #<finder_touch_y_coords> = 0        ;y coordinate for the z reference position in G53
-#<finder_diff_z> = 0                ;Differenz between tool touch button and reference surface. Sign indicates surface difference in axial direction.
+#<finder_diff_z> = 0                ;Difference between tool touch button and reference surface. Sign indicates surface difference in axial direction.
 
 
 ;-2- Transfer parameters
@@ -139,7 +139,7 @@ o<90> if [#<mode> EQ 1]
     G43
     (DEBUG, Same tool)
     ;(DEBUG, Selbes Werkzeug)
-    o<94> if [ #<brake_after_M600> EQ 1]     
+    o<94> if [ #<brake_after_M600> EQ 1]
 	    M00					;Interrupts the program flow until you press Start again
     o<94> elseif [#<brake_after_M600> EQ 2]
       M01			    ;If option is selected and [M01 BREAK] is selected in the interface, the machine pauses.
@@ -159,7 +159,7 @@ o<90> endif
 o<100> if [#<tool_selected> EQ 0]
   G90
   G53 G1 F#<traverse_fr> Z0
-  M6 T#<tool_selected> 
+  M6 T#<tool_selected>
   G49
   M50 P1
   (LOG, END M6 T0)
@@ -177,14 +177,14 @@ o<200> do
 
 
   ;-70- Positioning over tool length sensor / change position / edge-finder position
-  ;Turn off spindle befor the machine moves to probe / change  / edge-finder position.
+  ;Turn off spindle before the machine moves to probe / change  / edge-finder position.
   G49
   G90             (set absolute coordinates)
   G53 G1 F#<traverse_fr> Z0       (move to z0 home position)
   #<offset_z> = #5422         ;Stores the offset of the current Z coordinate at G53 Z0 without tool offset.
   M#<spindle_stop_m>
 
-  o<106> if [#<disable_pre_pos> EQ 0 AND [[#<mode> EQ 1 AND #<fastprobefailed> NE 2] OR #<fastprobefailed> EQ 1]] 
+  o<106> if [#<disable_pre_pos> EQ 0 AND [[#<mode> EQ 1 AND #<fastprobefailed> NE 2] OR #<fastprobefailed> EQ 1]]
     ;Change position
     G53 G1 F#<traverse_fr> X#5181 Y#5182
     G53 G1 F#<traverse_fr> Z#5183
@@ -199,7 +199,7 @@ o<200> do
 
 
   ;-80- Stops at probe failed
-  ;If last probe failed, machine stops to reposition the tool. 
+  ;If last probe failed, machine stops to reposition the tool.
   ;Switch to T0 to switch to the right tool in the next step.
   o<204> if [#<fastprobefailed> NE 0 ]
     o<205> if [#<addreps> EQ 1 AND #<lasttry> EQ 1]
@@ -217,17 +217,17 @@ o<200> do
 
 
   ;-90- Tool change
-  M6 T#<tool_selected> 
+  M6 T#<tool_selected>
   #<tool_length_old> = #5403                  ;Old tool length of the tool selected by T
   (LOG, Old tool length: #<tool_length_old>)
 
 
   ;-100- Positioning for measuring
   G53 G1 F#<traverse_fr> Z0       (move to z0 home position)
-  o<160> if [#<finder_number> GT 0 AND #<tool_selected> EQ #<finder_number>] 
+  o<160> if [#<finder_number> GT 0 AND #<tool_selected> EQ #<finder_number>]
     ;Edge-finder position
     G53 G1 F#<traverse_fr> X#<finder_touch_x_coords> Y#<finder_touch_y_coords>
-  o<160> else                                                   
+  o<160> else
     o<107> if [#<offset_diameter> GT 0 AND #<offset_diameter> LE #5410]
       ;Tool diameter correction
       #<offset_distance> = [[#5410 * #<offset_value>]/100]
@@ -243,12 +243,12 @@ o<200> do
         G53 G1 F#<traverse_fr> X#<tool_touch_x_coords> Y[#<tool_touch_y_coords>-#<offset_distance>]
       o<108> elseif [#<tool_setter_offset_direction> EQ 3]
         ;Offset Y+
-        G53 G1 F#<traverse_fr> X#<tool_touch_x_coords> Y[#<tool_touch_y_coords>+#<offset_distance>]     
+        G53 G1 F#<traverse_fr> X#<tool_touch_x_coords> Y[#<tool_touch_y_coords>+#<offset_distance>]
       o<108> endif
     o<107> else
       ;Tool touch position
       G53 G1 F#<traverse_fr> X#<tool_touch_x_coords> Y#<tool_touch_y_coords>
-    o<107> endif 
+    o<107> endif
   o<160> endif
 
 
@@ -274,7 +274,7 @@ o<200> do
   ;-120- Move to Z start position for length measurement
   G53 G1 F#<traverse_fr> Z#<probe_start_pos_z>
 
-  
+
   ;-130- Fast probe
   G91
   o<190> if [#<_task> EQ 1]
@@ -285,7 +285,7 @@ o<200> do
   G90
   #<addreps> = [#<addreps> - 1]
   (LOG, Fast probe: #5063)
-  
+
 
   ;-140- Verify fast probe event was succesful
   o<201> if [#5070 NE 1 AND #<_task> EQ 1]
@@ -365,7 +365,7 @@ o<140> if [#<mode> EQ 1]
     G1 F#<traverse_fr> X[#<stop_position_x>] Y[#<stop_position_y>]
     G1 F#<traverse_fr> Z[#<stop_position_z>]
   o<141> endif
-  
+
   ;Selects the type of pause after the survey.
   o<142> if [ #<brake_after_M600> EQ 1]
     M00			;Interrupts the program flow until you press Start again
