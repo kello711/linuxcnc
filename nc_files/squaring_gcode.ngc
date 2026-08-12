@@ -1,0 +1,29 @@
+G21 (Set units to millimeters)
+G90 (Absolute positioning distance mode)
+G0 Z20.00 (Clearance height above spoilboard)
+
+(Spindle Setup)
+M3 S12000 (Turn spindle clockwise at 12,000 RPM)
+G4 P3 (Pause for 3 seconds to let spindle reach speed)
+
+(Point A - Origin Corner)
+G0 X0.00 Y0.00
+G1 Z-5.00 F750.0 (Drill down 5mm into spoilboard)
+G0 Z20.00
+
+(Point B - X Axis Leg, 375mm)
+G0 X375.00 Y0.00
+G1 Z-5.00 F750.0 (Drill down 5mm)
+G0 Z20.00
+
+(Point C - Y Axis Leg, 500mm)
+G0 X0.00 Y500.00
+G1 Z-5.00 F750.0 (Drill down 5mm)
+G0 Z20.00
+
+(Safe Retract and Shutdown)
+G0 Z50.00 (Retract to safe height)
+G0 X-50 Y550
+M5 (Turn spindle off)
+G53 G0 Z0.00
+M30 (End of program)
