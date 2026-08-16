@@ -1,22 +1,23 @@
-T1   P0   D+6.000000 Z+54.935750 ; BB - 6mm 3F Carbide End Mill DLC (BC3055)
-T2   P0   D+6.000000 Z+44.000000 ; BB - 6mm 3F Carbide Roughing End Mill DLC (BC2055)
-T3   P0   D+0.039370 ; BB - 2F R0.5 Ball Nose End Mill DLC (BC2055)
-T4   P0   D+0.157480 ; BB - 2F R2 Ball Nose End Mill DLC (BC2055)
-T5   P0   D+6.000000 ; Dreanique - 3F 6mm x 18mm End Mill DLC
-T6   P0   D+8.000000 Z+24.570000 ; Dreanique - 3F 8mm x 24mm End Mill DLC
-T7   P0   D+4.000000 Z+42.341234 ; Dreanique - 1F 4mm x 22mm End Mill DLC
-T8   P0   D+6.000000 Z+45.850000 ; Dreanique - 1F 6mm x 22mm End Mill DLC
-T9   P0   D+8.000000 Z+26.250000 ; Dreanique - 1F 8mm x 25mm End Mill DLC
-T10  P0   D+0.125000 Z+32.737000 ; Generic - 1/8in 1F End Mill
-T11  P0   D+4.000000 Z+33.195000 ; Dreanique - 3F 4mm R90 Chamfer Mill
-T12  P0   D+1.550000 ; Dreanique - M2 1F Thread Mill
-T13  P0   D+3.150000 ; Dreanique - M4 1F Thread Mill
-T14  P0   D+4.800000 ; Dreanique - M6 1F Thread Mill
-T15  P0   D+10.000000 ; BB - 1F BAP 10mm
-T16  P0   D+25.000000 Z+40.688167 ; BB - 3F BAP 25mm
-T17  P0   D+8.000000 Z+51.289083 ; 8mm 3F END MILL (3F 8*8*24*60-BC3055)
-T90  P0   D+25.400000 Z+44.048417 ; 1" Wood surfacing bit
-T99  P0   D+2.000000 Z+65.019833 ; 3d Probe
-T100 P0   D+25.400000 ; SPINDLE NOSE
-T101 P0   Z+60.640000 ; 5mm Drill bit
-T102 P0   D+2.000000 Z+42.431317 ; 2MM DRILL BIT
+;Tool  Pocket Z Offset     Diameter     Fnt Ang      Remark
+T1     P0     Z+54.935750  D+6.000000   I+0.000000   ; BB - 6mm 3F Carbide End Mill DLC (BC3055)
+T2     P0     Z+44.000000  D+6.000000   I+0.000000   ; BB - 6mm 3F Carbide Roughing End Mill DLC (BC2055)
+T3     P0     Z+0.000000   D+0.039370   I+0.000000   ; BB - 2F R0.5 Ball Nose End Mill DLC (BC2055)
+T4     P0     Z+0.000000   D+0.157480   I+0.000000   ; BB - 2F R2 Ball Nose End Mill DLC (BC2055)
+T5     P0     Z+0.000000   D+6.000000   I+0.000000   ; Dreanique - 3F 6mm x 18mm End Mill DLC
+T6     P0     Z+24.570000  D+8.000000   I+0.000000   ; Dreanique - 3F 8mm x 24mm End Mill DLC
+T7     P0     Z+42.291151  D+4.000000   I+0.000000   ; Dreanique - 1F 4mm x 22mm End Mill DLC
+T8     P0     Z+46.045750  D+6.000000   I+0.000000   ; Dreanique - 1F 6mm x 22mm End Mill DLC
+T9     P0     Z+26.250000  D+8.000000   I+0.000000   ; Dreanique - 1F 8mm x 25mm End Mill DLC
+T10    P0     Z+32.737000  D+0.125000   I+0.000000   ; Generic - 1/8in 1F End Mill
+T11    P0     Z+31.801500  D+4.000000   I+0.000000   ; Dreanique - 3F 4mm R90 Chamfer Mill
+T12    P0     Z+0.000000   D+1.550000   I+0.000000   ; Dreanique - M2 1F Thread Mill
+T13    P0     Z+0.000000   D+3.150000   I+0.000000   ; Dreanique - M4 1F Thread Mill
+T14    P0     Z+37.582150  D+4.800000   I+0.000000   ; Dreanique - M6 1F Thread Mill
+T15    P0     Z+0.000000   D+10.000000  I+0.000000   ; BB - 1F BAP 10mm
+T16    P0     Z+39.861417  D+25.000000  I+0.000000   ; BB - 3F BAP 25mm
+T17    P0     Z+51.289083  D+8.000000   I+0.000000   ; 8mm 3F END MILL (3F 8*8*24*60-BC3055)
+T90    P0     Z+44.048417  D+25.400000  I+0.000000   ; 1" Wood surfacing bit
+T99    P0     Z+65.019833  D+2.000000   I+0.000000   ; 3d Probe
+T100   P0     Z+0.000000   D+25.400000  I+0.000000   ; SPINDLE NOSE
+T101   P0     Z+60.640000  D+0.000000   I+0.000000   ; 5mm Drill bit
+T102   P0     Z+42.431317  D+2.000000   I+0.000000   ; 2MM DRILL BIT
